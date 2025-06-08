@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>2048 Army - AbuHamza🔻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 - نمط جيشي | AbuHamza🔻</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<div id="instructionOverlay" class="overlay">
-  <div class="instruction-box">
-    <h2>🪖 رموز اللعبة العسكرية</h2>
-    <ul>
-      <li>🪖 = جندي</li>
-      <li>🔫 = مسدس</li>
-      <li>💣 = قنبلة</li>
-      <li>🪂 = مظلة</li>
-      <li>🚁 = مروحية</li>
-      <li>🛡️ = درع</li>
-      <li>🚀 = صاروخ</li>
-      <li>🎖️ = النصر</li>
-    </ul>
-    <button onclick="hideInstructions()">استمرار</button>
+  <div id="instructions" class="modal">
+    <div class="modal-content">
+      <h2>شرح الرموز</h2>
+      <ul>
+        <li>🪖 = جندي</li>
+        <li>🎖️ = رتبة</li>
+        <li>🛡️ = قائد</li>
+        <li>🚁 = دعم جوي</li>
+        <li>🔥 = نصر ساحق</li>
+      </ul>
+      <button onclick="startGame()">ابدأ اللعب</button>
+    </div>
   </div>
-</div>
 
-<h1>لعبة 2048 العسكرية</h1>
-<div class="container">
-  <div class="score">النقاط: <span id="score">0</span></div>
-  <div class="grid" id="grid"></div>
-  <button onclick="startGame()">إعادة اللعبة</button>
-  <div class="message" id="message"></div>
-</div>
+  <div class="container">
+    <h1>لعبة 2048 - طابع جيشي</h1>
+    <div id="score">النقاط: 0</div>
+    <div id="game-board"></div>
 
-<script src="script.js"></script>
+    <div class="controls">
+      <button onclick="move('up')">⬆️</button>
+      <div>
+        <button onclick="move('left')">⬅️</button>
+        <button onclick="move('right')">➡️</button>
+      </div>
+      <button onclick="move('down')">⬇️</button>
+    </div>
+
+    <button onclick="restartGame()">🔁 إعادة</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
